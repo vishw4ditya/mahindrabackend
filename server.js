@@ -30,8 +30,9 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-console.log(jwt);
-
+app.get("/", (req, res) => {
+    res.send("Mahindra Backend API is running 🚀");
+});
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
